@@ -12,14 +12,15 @@ def aver():
 	rows=curs.fetchall()
 	date=rows[0][0].date()
 	stime=rows[0][0].time()
+
 	curs.execute("select time FROM raw where id=%s",(num) )
 	rows=curs.fetchall()
 	etime=rows[0][0].time()
 	
-	curs.execute("select AVG(leftdata) FROM raw")
+	curs.execute("SELECT ROUND(AVG(leftdata),1) FROM raw")
 	rows=curs.fetchone()
 	laver=rows[0]
-	curs.execute("select AVG(rightdata) FROM raw")
+	curs.execute("SELECT ROUND(AVG(rightdata),1) FROM raw")
 	rows=curs.fetchone()
 	raver=rows[0]
 	
@@ -29,4 +30,3 @@ def aver():
 	curs.execute("INSERT INTO term(date, stime, etime, laver, raver) values (%s, %s, %s, %s, %s)", (date, stime, etime, laver, raver))
 	conn.commit()
 	curs.execute("truncate raw") #init table
-

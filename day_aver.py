@@ -10,13 +10,14 @@ def day_aver():
 	d=timedelta(days=-1)
 	t=date.today()
 	y=t+d
-	sql="SELECT AVG(laver), AVG(raver) FROM term  where date=%s"
+
+	sql="SELECT ROUND (AVG(laver),1), ROUND(AVG(raver),1)  FROM term  where date=%s"
 	curs.execute(sql,(y))  
 	rows=curs.fetchall()
-	if not rows:
+
+	if rows:
 		sql2= "INSERT INTO day(date, laver, raver) VALUES(%s, %s, %s)"
 		curs.execute(sql2,(y,rows[0][0],rows[0][1]))
 		conn.commit()
 
 day_aver()
-#ex
