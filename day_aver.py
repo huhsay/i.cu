@@ -19,3 +19,4 @@ def day_aver():
 		conn.commit()
 
 day_aver()
+#ex
