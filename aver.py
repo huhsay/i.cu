@@ -49,3 +49,5 @@ def term():
 	curs.execute("INSERT INTO term(date, stime, etime, laver, raver) values (%s, %s, %s, %s, %s)", (date, stime, etime, laver, raver))
 	conn.commit()
 	curs.execute("truncate raw") #init table
+
+#atomgit
