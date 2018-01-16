@@ -20,7 +20,7 @@ def day():
 		conn.commit()
 
 
-def aver():
+def term():
 
 	conn= db.connect('localhost', 'root', 'admin', 'smart')
 	curs=conn.cursor()
