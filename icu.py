@@ -80,14 +80,14 @@ preRight = 0
 preDay =0
 
 while True:
-    day = time.localtime().tm_mday
-    if(preDay!=day):
-        aver.day()
-        print "use def day_aver"
-        preDay=day
+	day = time.localtime().tm_mday
+	if(preDay!=day):
+		aver.day()
+		print "use def day_aver"
+		preDay=day
 
-    rData = readadc(potentiometer_adc, SPICLK, SPIMOSI, SPIMISO, SPICS)
-    lData = readadc(potentiometer_adc1, SPICLK, SPIMOSI, SPIMISO, SPICS)
+	rData = readadc(potentiometer_adc, SPICLK, SPIMOSI, SPIMISO, SPICS)
+	lData = readadc(potentiometer_adc1, SPICLK, SPIMOSI, SPIMISO, SPICS)
         # how much has it changed since the last read?
 
 	print "r",rData
