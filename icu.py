@@ -77,16 +77,17 @@ sql = "insert into raw(leftdata, rightdata) values (%s,%s)"
 start = False
 preLeft = 0
 preRight = 0
-
+preDay =0
 
 while True:
-
-	if(time.localtime().tm_hour==0):
+    day = time.localtime().tm_mday
+	if(preDay!=day):
 		aver.day()
 		print "use def day_aver"
+        preDay=day
 
-        rData = readadc(potentiometer_adc, SPICLK, SPIMOSI, SPIMISO, SPICS)
-        lData = readadc(potentiometer_adc1, SPICLK, SPIMOSI, SPIMISO, SPICS)
+    rData = readadc(potentiometer_adc, SPICLK, SPIMOSI, SPIMISO, SPICS)
+    lData = readadc(potentiometer_adc1, SPICLK, SPIMOSI, SPIMISO, SPICS)
         # how much has it changed since the last read?
 
 	print "r",rData
@@ -101,7 +102,7 @@ while True:
 		l2 = (lData*100/sum)
 		print (round(r2))
 		print (round(l2))
-		curs.execute(sql,(r2,l2))
+		curs.execute(sql,(l2,r2))
 
 		start = True
 		preLeft = lData
