@@ -51,4 +51,5 @@ def term():
 	curs.execute("truncate raw") #init table
 
 #atomgit
+#atomgit2
 #atomgit3
