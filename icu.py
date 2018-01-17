@@ -82,8 +82,8 @@ preDay =0
 while True:
     day = time.localtime().tm_mday
     if(preDay!=day):
-		aver.day()
-		print "use def day_aver"
+        aver.day()
+        print "use def day_aver"
         preDay=day
 
     rData = readadc(potentiometer_adc, SPICLK, SPIMOSI, SPIMISO, SPICS)
