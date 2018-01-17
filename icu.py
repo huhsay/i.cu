@@ -77,7 +77,7 @@ sql = "insert into raw(leftdata, rightdata) values (%s,%s)"
 start = False
 preLeft = 0
 preRight = 0
-preDay =0
+preDay =time.localtime().tm_mday
 
 while True:
 	day = time.localtime().tm_mday
