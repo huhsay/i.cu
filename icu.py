@@ -95,6 +95,7 @@ while True:
 
 	if(rData !=0 or lData !=0):
 
+
 		print "state of measure"
 		sum = rData+lData
 		print (sum)
