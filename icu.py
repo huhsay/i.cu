@@ -106,13 +106,13 @@ while True:
 		else:
 			preLeft=0
 			preRight=0
-            if(start==false):
-                print "idle state"
-            else:
-                print "first 0 data"
+		if(start==False):
+			print "idle state"
+		else:
+			print "first 0 data"
 
         # hang out and do nothing for a half second
-        time.sleep(2)
+        time.sleep(30)
 	conn.commit()
 
 conn.close()
