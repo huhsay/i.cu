@@ -81,7 +81,7 @@ while True:
 	print "r",rData
 	print "l",lData
 
-	if(rData !=0 or lData !=0):
+	if(rData > 5 or lData > 5):
 
 		print "state of measure"
 		sum = rData+lData
